@@ -1,0 +1,4 @@
+var A;
+var B;
+var C;
+A \/ B /\ True => (C \/ !D)

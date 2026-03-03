@@ -1,0 +1,95 @@
+# Guia para entender expressões regulares
+
+# Caracteres podem ser representados com auxilio do "\"
+
+\.  # ponto
+\+  # simbolo +
+\-  # simbolo -
+\?  # simbolo ?
+
+
+
+# Simbolo '+' nas expressões regulares
+
+X+      # Também pode ser representado como XX*
+a+      # a, aa, aaa
+\d+     # 1, 20, 999
+[ab]+   # a, b, ab, ba, aab
+
+
+
+# Simbolo '*' nas expressões regulares
+
+X*      # X pode aparecer ou não, e repetir
+a*      # "", a, aa, aaa, ..., aaaaaaaaaaaaaaaa
+\d*     # "", 1, 41, 99988888822221111
+(ab)*   # "", ab, abab, ababab
+.*      # Qualquer sequência de caracteres
+
+
+# Simbolo '?' nas expressões regulares
+
+X?      # X é opcional
+a?      # "" ou a
+[+-]?   # "", + ou -
+\d?     # "", 0–9
+
+# Non-capturing group
+?:      # Um non-capturing group, irá agrupar todas as repetições
+        # de uma dada expressão como uma única captura
+
+
+# Repetições entre {}
+
+{n}     # Exatamente "n" repetições 
+{m, n}  # Repetições entre m e n
+{n, }   # Repetições que sejam pelo menos "n"
+
+
+# Digitos
+
+\d      # Digitos de 0-9, também entendido como [0-9]
+\d      # Um único digito
+\d\d    # Dois digitos seguidos
+\d+     # Um ou mais digitos
+\d*     # Zero ou mais digitos
+
+
+
+# Agrupamento ()
+
+(ab)+       # ab, abab
+(a|b)c      # ac ou bc
+(\.\d+)?    # parte decimal opcional
+
+    # Sem parêntesis
+    ab+     # a seguido de b+
+
+    # Com parêntesis
+    (ab)+   # repete "ab"
+
+# Alternativa |
+
+X|Y         # X ou Y 
+a|b         # a ou b
+\d|\.       # dígito ou ponto
+(sim|não)   # palavras sim ou não
+
+
+# Classe de Caracteres
+
+[+-]       # + ou -
+[abc]      # a, b ou c
+[0-9]      # qualquer dígito
+[a-z]      # letras minúsculas
+
+
+
+# Exemplos de expressões regulares com os operadores estudados até agora
+
+\d+             # Numero inteiro
+\d+\.\d+        # Numero inteiro com parte decimal
+\.\d+           # Numero decimal sem a parte inteira
+[+-]?\.\d+      # Numero decimal sem a parte inteira e com sinal opcional
+\d+|\.\d+       # Numero inteiro ou decimal 
+\d+|[+-]?\.\d+  # Numero inteiro ou decimal sem a parte inteira e com sinal opcional 
